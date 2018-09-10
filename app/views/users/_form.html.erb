@@ -15,7 +15,23 @@
   <%= f.label :name %>
   <br>
   <%= f.text_field :name%>
-  
-  <%= f.label :name %>
+
+  <%= f.label :email %>
   <br>
-  <%= f.text_field :name%>
+  <%= f.text_field :email%>
+
+  <%= f.label :password %>
+  <br>
+  <%= f.password_field :password%>
+
+  <%= f.label :position %>
+  <br>
+  <%= f.number_field :position%>
+
+  <%= f.label :team %>
+  <br>
+  <%= f.check_box :team%>
+
+  <%= f.submit class: "btn btn-primary" %>
+
+<% end %>
