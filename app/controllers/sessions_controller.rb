@@ -26,10 +26,10 @@ class SessionsController < ApplicationController
       u.email = auth['info']['email']
       u.image = auth['info']['image']
     end
-    binding.pry
+    @user.password_digest = "1234"
     session[:user_id] = @user.id
 
-    render '/users/home'
+    render '/users/show'
   end
 
   private
