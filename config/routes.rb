@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback' => 'sessions#loginbyfacebook'
 
+  get "/lists/[:id]", to: 'lists#show'
+
 
   resources :teams
   resources :lists

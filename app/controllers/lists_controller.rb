@@ -6,26 +6,25 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(name: params[:name].to_s)
+    @list = List.new(list_params)
     @list.user_id = session[:user_id]
     @list.save
-
+    binding.pry
     ##iterate over task[name] to create all instances of tasks
     #binding.pry
-    @tasks = params[:task][:name]
-    @tasks = @tasks.reject { |c| c.empty? }
-    @tasks.each do |task|
-      @task = Task.new(name: task)
-      @task.list_id = @list.id
-      @task.save
-    end
-    redirect_to list_path
+
+
+    redirect_to list_path(@list)
+  end
+
+  def show
+    @list = List.find_by(id: params[:id])
   end
 
   private
 
-    def post_params
-      params.require(:post).permit(:title, :content, category_ids:[], categories_attributes: [:name])
+    def list_params
+      params.require(:list).permit(:name, task_ids:[], tasks_attributes: [:name])
     end
 
 end
