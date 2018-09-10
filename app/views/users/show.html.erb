@@ -1,8 +1,10 @@
-Welcome! <%= @user.name %>
+<h1>Welcome! <%= @user.name %> </h1>
 
-List position
-List teams with links
-List personal lists
+<ul>
+  <li>List position</li>
+  <li>List teams with links</li>
+  <li>List personal lists</li>
+</ul>
 
 
  <%= link_to "Log Out", signout_path, method: :delete %>
