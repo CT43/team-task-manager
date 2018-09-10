@@ -11,6 +11,7 @@ class ListsController < ApplicationController
     @list.save
 
     ##iterate over task[name] to create all instances of tasks
+    #binding.pry
     @tasks = params[:task][:name]
     @tasks = @tasks.reject { |c| c.empty? }
     @tasks.each do |task|
@@ -20,5 +21,11 @@ class ListsController < ApplicationController
     end
     redirect_to list_path
   end
-  
+
+  private
+
+    def post_params
+      params.require(:post).permit(:title, :content, category_ids:[], categories_attributes: [:name])
+    end
+
 end

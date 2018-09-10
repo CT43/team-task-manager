@@ -5,12 +5,18 @@
   <%= f.label :name, "List Name" %>
   <%= f.text_field :name %> <br><br>
 
-  <%= f.label :task_name %>
-  <%= f.text_field :name %> <br>
-  <%= f.label :task_name %>
-  <%= f.text_field :name %> <br>
-  <%= f.label :task_name %>
-  <%= f.text_field :name %> <br>
+  <%= f.fields_for :tasks, @list.tasks.build do |tasks| %>
+    <%= tasks.text_field :name %>
+  <% end %>
+  <%= f.fields_for :tasks, @list.tasks.build do |tasks| %>
+    <%= tasks.text_field :name %>
+  <% end %>
+  <%= f.fields_for :tasks, @list.tasks.build do |tasks| %>
+    <%= tasks.text_field :name %>
+  <% end %>
+  <%= f.fields_for :tasks, @list.tasks.build do |tasks| %>
+    <%= tasks.text_field :name %>
+  <% end %>
 
 
   <%= f.submit %>
