@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_secure_password
+  #has_secure_password
 
-  belongs_to :team
+  belongs_to :team, required: false
   has_many :teams
   has_many :users, through: :teams
   has_many :lists
