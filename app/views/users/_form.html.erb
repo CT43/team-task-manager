@@ -13,25 +13,20 @@
   <% end %>
 
   <%= f.label :name %>
-  <br>
   <%= f.text_field :name%>
-
+  <br>
   <%= f.label :email %>
-  <br>
   <%= f.text_field :email%>
-
+  <br>
   <%= f.label :password %>
-  <br>
   <%= f.password_field :password%>
-
+  <br>
   <%= f.label :position %>
-  <br>
   <%= f.number_field :position%>
-
-  <%= f.label :team %>
   <br>
-  <%= f.check_box :team%>
-
+  <%= f.label :team %>
+  <%= f.collection_select :team_id, Team.order(:name),:id,:name, include_blank: true %>
+  <br>
   <%= f.submit class: "btn btn-primary" %>
 
 <% end %>
