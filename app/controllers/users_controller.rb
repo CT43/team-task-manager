@@ -28,6 +28,9 @@ class UsersController < ApplicationController
          format.html { render :edit }
        end
      end
+   end
+
+   def edit
    end   
 
 
