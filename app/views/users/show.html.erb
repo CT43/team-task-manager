@@ -1,9 +1,12 @@
 <h1>Welcome! <%= @user.name %> </h1>
 
 <ul>
-  <li>List position</li>
-  <li>List teams with links</li>
-  <li>List personal lists</li>
+  <li>List position <%= @user.position %></li>
+  <li>List teams with links <%= @user.team.name %></li>
+  <li>List personal lists </li>
+  <% @user.lists.each do |list| %>
+  <%= link_to list.name, list_path(list) %>
+  <% end %>
 </ul>
 
 
