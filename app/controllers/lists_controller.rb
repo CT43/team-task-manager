@@ -9,7 +9,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user_id = session[:user_id]
     @list.save
-    binding.pry
+    #binding.pry
     ##iterate over task[name] to create all instances of tasks
     #binding.pry
 

@@ -1,4 +1,11 @@
-<%= @list.name %>
+<h2><%= @list.name %> </h2>
+
 <% @list.tasks.each do |task| %>
-<%= task.name %>
+<%= form_for(task) do |f| %>
+  <%= f.label :name, task.name %>
+  <%= f.check_box :name %>
+  <% end %>
+
+<!-- <input type="checkbox" name="list[task_ids][]" value="<%= task.id %>" -->
+<!-- <p><a href="/task/<%=task.id%>/edit"><%=task.name%></a></p> -->
 <% end %>
