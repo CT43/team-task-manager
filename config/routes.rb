@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  root 'user#home'
-  
+  root 'users#home'
+  get "/signin", to: "sessions#new"
+
+
   resources :teams
   resources :lists
   resources :tasks
