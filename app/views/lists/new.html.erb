@@ -1,0 +1,17 @@
+<h2>Create a list!</h2>
+
+
+<%= form_for(@list) do |f| %>
+  <%= f.label :name, "List Name" %>
+  <%= f.text_field :name %> <br><br>
+
+  <%= f.label :task_name %>
+  <%= f.text_field :name %> <br>
+  <%= f.label :task_name %>
+  <%= f.text_field :name %> <br>
+  <%= f.label :task_name %>
+  <%= f.text_field :name %> <br>
+
+
+  <%= f.submit %>
+<% end %>
