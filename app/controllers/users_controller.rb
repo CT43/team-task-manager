@@ -20,6 +20,16 @@ class UsersController < ApplicationController
      end
    end
 
+   def update
+     respond_to do |format|
+       if @user.update(user_params)
+         format.html { redirect_to @user, notice: 'User was successfully updated.' }
+       else
+         format.html { render :edit }
+       end
+     end
+   end   
+
 
   private
    # Use callbacks to share common setup or constraints between actions.
