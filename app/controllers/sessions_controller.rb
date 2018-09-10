@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
 
   def loginbyfacebook
     @user = User.find_by(email: auth['info']['email']) do |u|
-      u.name = auth['info']['name']
+      u.uid = auth['uid']
       u.email = auth['info']['email']
       u.image = auth['info']['image']
     end
