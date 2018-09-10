@@ -9,8 +9,8 @@ class UsersController < ApplicationController
    end
 
    def show
-
-   end 
+     @user = current_user
+   end
 
    def create
      @user = User.new(user_params)
