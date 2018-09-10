@@ -20,13 +20,12 @@ class SessionsController < ApplicationController
     end
   end
 
-  def createbyfacebook
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
+  def loginbyfacebook
+    @user = User.find_by(email: auth['info']['email']) do |u|
       u.name = auth['info']['name']
       u.email = auth['info']['email']
       u.image = auth['info']['image']
     end
-    @user.password_digest = "1234"
     session[:user_id] = @user.id
 
     render '/users/show'
