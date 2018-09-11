@@ -17,6 +17,15 @@ class ListsController < ApplicationController
     redirect_to list_path(@list)
   end
 
+
+  def index
+    if params[:user_id]
+      @lists = User.find(params[:user_id]).lists
+    else
+      @lists = List.all
+    end
+  end
+
   def show
     @list = List.find_by(id: params[:id])
   end
