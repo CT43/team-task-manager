@@ -8,6 +8,11 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     @list.user_id = session[:user_id]
+    @list.tasks.collect do |t|
+      if t.name == ""
+        t.destroy
+      end
+    end
 
     if @list.valid?
       @list.save
