@@ -5,7 +5,7 @@
   <li>List teams with links <%= @user.team.name %></li>
   <li>List personal lists </li>
   <% @user.lists.each do |list| %>
-  <%= link_to list.name, list_path(list) %>
+  <%= link_to list.name, user_list_path(@user, list) %>
   <% end %>
 </ul>
 

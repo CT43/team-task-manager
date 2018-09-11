@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   get "/lists/[:id]", to: 'lists#show'
 
+  resources :users do
+    resources :lists
+  end
+
 
   resources :teams
   resources :lists

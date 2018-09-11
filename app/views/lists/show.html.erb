@@ -2,10 +2,17 @@
 
 <% @list.tasks.each do |task| %>
 <%= form_for(task) do |f| %>
-  <%= f.label :name, task.name %>
+    <%= f.label :name do %>
+      <%= f.check_box :completed %>
+      <%= link_to task.name, task_path(task) %>.
+    <% end %>
+    <br>
+
+
+  <!-- <%= f.label :name, task.name %>
   <%= f.check_box :completed %>
   <%= f.submit %>
-  <% end %>
+  <% end %> -->
 
 <!-- <input type="checkbox" name="list[task_ids][]" value="<%= task.id %>" -->
 <!-- <p><a href="/task/<%=task.id%>/edit"><%=task.name%></a></p> -->

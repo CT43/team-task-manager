@@ -5,5 +5,11 @@ class TasksController < ApplicationController
     task.completed = params[:task][:completed]
     task.save
   end
-  
+
+  def edit
+  end
+
+  def show
+  end 
+
 end
