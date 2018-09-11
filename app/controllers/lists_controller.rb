@@ -8,13 +8,13 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     @list.user_id = session[:user_id]
-    @list.save
-    #binding.pry
-    ##iterate over task[name] to create all instances of tasks
-    #binding.pry
 
-
-    redirect_to list_path(@list)
+    if @list.valid?
+      @list.save
+      redirect_to user_list_path(current_user, @list)
+    else
+      render :new
+    end
   end
 
 
