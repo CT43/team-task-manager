@@ -1,13 +1,23 @@
 to-do
 
 
+add more validations - user
+add list edit view
+add team view
+add
 
-allow lists to get checked off
-  delete list action
-  update list
-  edit list has nested route?
 
-allow user to have multiple teams
+add partials
+
+
+
+
+
+
+
+
+
+
 
 set up team view
   team home
@@ -15,3 +25,6 @@ set up team view
 allow high position to view teammembers lists, create lists, and change them
 
 validations
+
+
+add partials
