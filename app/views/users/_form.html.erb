@@ -26,6 +26,9 @@
   <br>
   <%= f.label :team %>
   <%= f.collection_select :team_id, Team.order(:name),:id,:name, include_blank: true %>
+"Or create new team"
+  <%= label_tag :new_team_name, "Team name" %>
+  <%= text_field_tag :new_team_name %>
   <br>
   <%= f.submit class: "btn btn-primary" %>
 
