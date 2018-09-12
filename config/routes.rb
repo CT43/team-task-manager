@@ -8,15 +8,10 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback' => 'sessions#loginbyfacebook'
 
-  get "/lists/[:id]", to: 'lists#show'
-
-
-
   resources :users do
     resources :lists
     resources :teams
   end
-
 
   resources :teams
   resources :lists
@@ -24,5 +19,4 @@ Rails.application.routes.draw do
   resources :users
 
   get "/users/:id/tasks_to_complete", to: 'tasks#tasks_to_complete'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
