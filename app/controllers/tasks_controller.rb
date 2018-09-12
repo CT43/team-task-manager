@@ -7,8 +7,14 @@ class TasksController < ApplicationController
   end
 
   def tasks_to_complete
-
-  end 
+    all_uncompleted_tasks = Task.tasks_to_complete
+    @tasks = []
+    all_uncompleted_tasks.each do |task|
+      if task.user == current_user
+        @tasks << task
+      end
+    end 
+  end
 
   def edit
   end
