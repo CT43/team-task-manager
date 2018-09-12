@@ -6,6 +6,10 @@ class TasksController < ApplicationController
     task.save
   end
 
+  def tasks_to_complete
+
+  end 
+
   def edit
   end
 
@@ -14,7 +18,7 @@ class TasksController < ApplicationController
   end
 
   def create
-  
+
   end
 
 end

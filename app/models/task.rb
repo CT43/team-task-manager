@@ -1,12 +1,12 @@
 class Task < ApplicationRecord
   belongs_to :list
 
-  def self.tasks_completed
-    where("completed == 1")
+  def self.tasks_to_complete
+    where("completed == 0")
   end
 
-  def task_team_name
-    self.list.user.team.name
+  def user_name
+    self.list.user.name
   end
 
 end

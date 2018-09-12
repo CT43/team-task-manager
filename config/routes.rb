@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get "/lists/[:id]", to: 'lists#show'
 
+  get "/users.[:id]/tasks_to_complete" to: 'tasks#tasks_to_complete'
+
   resources :users do
     resources :lists
     resources :teams
