@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :lists
   has_many :tasks, through: :lists
 
+  validates :email, :uniqueness: true
+
+
+
 end
