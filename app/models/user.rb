@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :lists
   has_many :tasks, through: :lists
 
-  validates :email, :uniqueness: true
-
+  validates :email, uniqueness: true
+  validates :name, presence: true
 
 
 end
