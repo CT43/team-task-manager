@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get "/lists/[:id]", to: 'lists#show'
 
-  get "/users.[:id]/tasks_to_complete" to: 'tasks#tasks_to_complete'
+
 
   resources :users do
     resources :lists
@@ -22,5 +22,7 @@ Rails.application.routes.draw do
   resources :lists
   resources :tasks
   resources :users
+
+  get "/users/:id/tasks_to_complete", to: 'tasks#tasks_to_complete'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -10,10 +10,10 @@ class TasksController < ApplicationController
     all_uncompleted_tasks = Task.tasks_to_complete
     @tasks = []
     all_uncompleted_tasks.each do |task|
-      if task.user == current_user
+      if current_user.list_ids.include?(task.list_id)
         @tasks << task
       end
-    end 
+    end
   end
 
   def edit
