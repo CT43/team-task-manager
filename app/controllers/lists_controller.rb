@@ -17,7 +17,6 @@ class ListsController < ApplicationController
         t.destroy
       end
     end
-
     if @list.valid?
       @list.save
       redirect_to user_list_path(current_user, @list)
@@ -25,7 +24,6 @@ class ListsController < ApplicationController
       render :new
     end
   end
-
 
   def index
     if params[:user_id]
@@ -44,12 +42,6 @@ class ListsController < ApplicationController
     @list.destroy
     redirect_to user_path(current_user)
   end
-
-  # def update
-  #   binding.pry
-  #   @list = List.find_by(id: params[:id])
-  # end
-
 
   private
 

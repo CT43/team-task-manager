@@ -11,5 +11,5 @@
 <% end %>
 
 <% if current_user.position > @list.user.position %>
-    <%= link_to 'Delete', "/lists/#{@list.id}", method: :delete%>
-    <% end %>
+  <%= link_to 'Delete', "/lists/#{@list.id}", method: :delete%>
+<% end %>
