@@ -27,7 +27,6 @@ class SessionsController < ApplicationController
       u.image = auth['info']['image']
     end
     session[:user_id] = @user.id
-
     render '/users/show'
   end
 
@@ -36,6 +35,4 @@ class SessionsController < ApplicationController
   def auth
     request.env['omniauth.auth']
   end
-
-
 end
