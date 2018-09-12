@@ -14,3 +14,6 @@ If you are a team member with a ranking above other team members, you have all t
 This allows for a hierarchical team structure, which so many teams are, and functionality for the app.
 
 Enjoy!
+
+
+MIT open source license 
