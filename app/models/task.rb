@@ -5,5 +5,13 @@ class Task < ApplicationRecord
     where("completed == 0")
   end
 
+  def task_user?(current_user)
+    self.list.user == current_user
+  end
+
+  def boss?(current_user)
+    current_user.position > self.list.user.position
+  end
+
 
 end
