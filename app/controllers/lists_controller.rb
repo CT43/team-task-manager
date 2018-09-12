@@ -3,11 +3,15 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+    @user_id = params[:user_id]
   end
 
   def create
     @list = List.new(list_params)
-    @list.user_id = session[:user_id]
+    if params[:new_user_num].empty?
+      @list.user_id = session[:user_id]
+    end
+    @list.user_id = params[:new_user_num]
     @list.tasks.collect do |t|
       if t.name == ""
         t.destroy

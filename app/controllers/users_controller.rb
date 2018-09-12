@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
    def create
     @user = User.new(user_params)
-     if params[:new_team_name]
+     if !params[:new_team_name].empty?
        @team = Team.create(name: params[:new_team_name])
        @user.team = @team
      end
