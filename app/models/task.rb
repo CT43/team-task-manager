@@ -13,5 +13,9 @@ class Task < ApplicationRecord
     current_user.position > self.list.user.position
   end
 
+  def self.task_count
+    all.count
+  end
+
 
 end

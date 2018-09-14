@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback' => 'sessions#loginbyfacebook'
 
+  get '/task_count', to: 'tasks#task_count'
   resources :users do
     resources :lists
     resources :teams

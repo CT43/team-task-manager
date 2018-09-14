@@ -20,6 +20,10 @@ class TasksController < ApplicationController
     end
   end
 
+  def task_count
+    @tasks = Task.task_count
+  end
+
   def create
   end
 
